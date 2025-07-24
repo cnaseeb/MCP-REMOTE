@@ -8,3 +8,16 @@ print(res.json())
 # curl -X POST http://localhost:5000/mcp \
 #   -H "Content-Type: application/json" \
 #   -d '{"input": "Plan my day", "agent": "planner"}'
+
+# Step 7: Add Complexity (Later)
+# Once basics work:
+
+# ✅ Add function-calling support via OpenAI
+
+# ✅ Add tools like web search or code exec
+
+# ✅ Add long-term memory (Redis, DB)
+
+# ✅ Secure the API (auth tokens, rate limit)
+
+# ✅ Deploy to cloud (Render, Fly.io, AWS)

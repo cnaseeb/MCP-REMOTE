@@ -13,8 +13,8 @@ claude_client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
 def call_openai(prompt):
     response = openai.ChatCompletion.create(
-        model = "gpt-4"
-        messages = [{"role": "user", "content": prompt}]
+        model = "gpt-4",
+        messages = [{"role": "user", "content": prompt}],
         temperature = 0.7
     )
     return response.choices[0].message['content']

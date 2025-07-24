@@ -16,15 +16,29 @@ This project implements an agentic AI control server using a lightweight MCP (Mu
 
 ## 🧱 Project Structure
 mcp-server/
-├── agent_router.py # Routes requests to appropriate agent/model
-├── llm_clients.py # API wrappers for OpenAI & Claude
-├── memory.py # Optional agent memory
-├── server.py # Flask MCP server
-├── .gitignore # Ignores venv and secrets
-├── .env # API keys (not committed)
-└── README.md # This file
+  - agent_router.py # Routes requests to appropriate agent/model
+    
+  - llm_clients.py # API wrappers for OpenAI & Claude
+    
+  - memory.py # Optional agent memory
+    
+  - server.py # Flask MCP server
+    
+  - .gitignore # Ignores venv and secrets
+    
+  - .env # API keys (not committed)
+    
+  - README.md # This file
 
-## 🏃 Build and run locally
+---
+
+## 📄 1. LICENSE (MIT License)
+📄 License: MIT License — see LICENSE file.
+
+## 🐳 2. Docker Deployment
+Create a 📄 Dockerfile
+
+### 🏃 Build and run locally
 docker build -t mcp-server .
 docker run -p 5000:5000 --env-file .env mcp-server
 
@@ -47,13 +61,23 @@ ANTHROPIC_API_KEY = your-key
 
 - Hit deploy!
 
+## 4. Future Additions
+- Tool calling / function execution
+
+- Redis-backed long-term memory
+
+- Async agent orchestration
+
+- Slack or web front-end integration
+
+
 ---
 
 ## 🧪 Setup Instructions
 
-### 1. Clone the repo
-
 ```bash
+1. Clone the repo
+
 git clone <your-repo-url>
 cd mcp-server
 
@@ -92,18 +116,6 @@ To untrack venv/ if it was already committed:
 
 git rm -r --cached venv
 
-
-Future Additions
-Tool calling / function execution
-
-Redis-backed long-term memory
-
-Async agent orchestration
-
-Slack or web front-end integration
-
-📄 License
-MIT License — see LICENSE file.
 
 🙌 Credits
 Built with inspiration from modern agentic architectures and the growing community around multi-agent AI systems.

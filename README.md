@@ -24,6 +24,28 @@ mcp-server/
 ├── .env # API keys (not committed)
 └── README.md # This file
 
+## 🏃 Build and run locally
+docker build -t mcp-server .
+docker run -p 5000:5000 --env-file .env mcp-server
+
+## ☁️ 3. Render Deployment (Free Hosting Option)
+- Go to https://render.com
+
+- Click "New Web Service"
+
+- Connect your GitHub repo
+
+- Set build settings:
+
+Build Command:  pip install -r requirements.txt
+Start Command:  python server.py
+Environment:    Python 3.x
+
+- Add environment variables in the "Environment" tab:
+OPENAI_API_KEY = your-key
+ANTHROPIC_API_KEY = your-key
+
+- Hit deploy!
 
 ---
 

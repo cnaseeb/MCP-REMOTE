@@ -11,7 +11,7 @@ def execute_tool(tool_name: str, arguments: str):
     if tool_name not in TOOL_REGISTRY:
         raise ToolExecutionError(f"Tool '{tool_name}' not found.")
     
-    tool = TOOL_REGISTRY[TOOL_REGISTRY]
+    tool = TOOL_REGISTRY[tool_name]
     func = tool["func"]
     
     try:

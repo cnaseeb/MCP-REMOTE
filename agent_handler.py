@@ -1,5 +1,6 @@
 # agent_handler.py
 # used to handle agent messages
+# integrate with MCP server- tool call detection
 
 from tool_executor import execute_tool, ToolExecutionError
 

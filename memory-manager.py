@@ -43,7 +43,10 @@ class MemoryManager:
     
     def save_memory(self, namespace):
         
-    def get_memory():
+    def get_memory(self, namespace:str, user_id: str) -> Optional[dict]:
+        key = self._make_key(namespace, user_id)
+        json_data = self.redis.get(key)
+        return json.loads(json_data) if json_data else None
         
     def append_memory():
         

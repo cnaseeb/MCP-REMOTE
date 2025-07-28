@@ -27,6 +27,20 @@ Redis-backed long-term memory means:
 - Optionally setting expiry or tagging data as long-term.
 
 You can use redis-py as the Redis client and organize the data using structured keys and TTL (time-to-live) or persistent storage.
- """
- 
- 
+"""
+# memory-manager.py
+
+import redis
+import json
+from typing import Optional
+
+class MemoryManager:
+    def __init__(self, redis_url: str = "redis://localhost:6379/0"):
+        self.redis = redis.Redis.from_url(redis_url, decode_responses=True)
+        
+    def _make_key(self, namespace:str, user_id: str)-> str:
+        return f"memory:{namespace}:{user_id}"
+    
+    
+    
+    

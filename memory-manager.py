@@ -48,7 +48,10 @@ class MemoryManager:
         json_data = self.redis.get(key)
         return json.loads(json_data) if json_data else None
         
-    def append_memory():
+    def append_memory(self, namespace: str, user_id: str, new_data: dict):
+        existing = self.get_memory(namespace, user_id) or {}
+        merged = {**existing, **new_data}
+        self.save_memory(namespace, user_id, merged)
         
     
     def delete_memory(self, namespace:str, user_id:str):

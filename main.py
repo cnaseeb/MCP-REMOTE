@@ -1,6 +1,6 @@
 # main.py
 
-from memory-manager import MemoryManager
+from MemoryManager import MemoryManager #memory-manager
 
 memory = MemoryManager()
 

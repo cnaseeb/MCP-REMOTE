@@ -50,6 +50,9 @@ class MemoryManager:
         
     def append_memory():
         
-    def delete_memory():
+    
+    def delete_memory(self, namespace:str, user_id:str):
+        key = self._make_key(namespace, user_id)
+        self.redis.delete(key)
     
     

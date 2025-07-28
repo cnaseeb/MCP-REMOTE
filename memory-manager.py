@@ -41,6 +41,12 @@ class MemoryManager:
     def _make_key(self, namespace:str, user_id: str)-> str:
         return f"memory:{namespace}:{user_id}"
     
-    
+    def save_memory():
+        
+    def get_memory():
+        
+    def append_memory():
+        
+    def delete_memory():
     
     

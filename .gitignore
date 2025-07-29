@@ -2,3 +2,4 @@
 .env/
 venv/
 __pycache__/
+ secrets-to-remove.txt

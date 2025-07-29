@@ -36,13 +36,20 @@ from typing import Optional
 
 class MemoryManager:
     def __init__(self, redis_url: str = "REDIS_URL"): #redis://localhost:6379/0
-
         self.redis = redis.Redis.from_url(redis_url, decode_responses=True)
         
     def _make_key(self, namespace:str, user_id: str)-> str:
         return f"memory:{namespace}:{user_id}"
-    
-    def save_memory(self, namespace):
+
+
+    def save_memory(self, namespace:str, user_id: str, data:dict, ttl:Optional[int]= None):
+        key = self._make_key(namespace, user_id)
+        json_data = json.dump(data)
+        if ttl:
+            self.redis.setex(key, ttl, json_data)
+        else:
+            self.redis.set(key, json_data)
+
         
     def get_memory(self, namespace:str, user_id: str) -> Optional[dict]:
         key = self._make_key(namespace, user_id)

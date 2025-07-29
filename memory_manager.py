@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """ Redis (REmote DIctionary Server) is a fast, in-memory key-value database, often used for:
 
 - Caching

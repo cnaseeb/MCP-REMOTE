@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 """ Redis (REmote DIctionary Server) is a fast, in-memory key-value database, often used for:
 
 - Caching
@@ -42,7 +42,6 @@ class MemoryManager:
     def _make_key(self, namespace:str, user_id: str)-> str:
         return f"memory:{namespace}:{user_id}"
 
-
     def save_memory(self, namespace:str, user_id: str, data:dict, ttl:Optional[int]= None):
         key = self._make_key(namespace, user_id)
         json_data = json.dump(data)
@@ -51,7 +50,6 @@ class MemoryManager:
         else:
             self.redis.set(key, json_data)
 
-        
     def get_memory(self, namespace:str, user_id: str) -> Optional[dict]:
         key = self._make_key(namespace, user_id)
         json_data = self.redis.get(key)

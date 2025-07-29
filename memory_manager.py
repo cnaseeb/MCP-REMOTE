@@ -35,7 +35,8 @@ import json
 from typing import Optional
 
 class MemoryManager:
-    def __init__(self, redis_url: str = "***REMOVED***"): #redis://localhost:6379/0
+    def __init__(self, redis_url: str = "REDIS_URL"): #redis://localhost:6379/0
+
         self.redis = redis.Redis.from_url(redis_url, decode_responses=True)
         
     def _make_key(self, namespace:str, user_id: str)-> str:

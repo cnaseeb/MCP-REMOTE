@@ -4,14 +4,14 @@ from memory_manager import MemoryManager # memory-manager - has issues
 
 memory = MemoryManager()
 
-user_id = "user123"
+user_id = "user_ID"
 namespace = "chat" #chat for conversation history, "state" for user context, "session" for session-related (local) data
 
 #save memory
 memory.save_memory(namespace, user_id, {"last_message": "hello world"})
 
 # You can pass TTL (the time limit) in seconds to save_memory() if you'd like the memory to expire at a set interval
-memory.save_memory("chat", "user123", {"msg": "Hello"}, ttl=3600) #Expires in 1 hour
+memory.save_memory("chat", "user_ID", {"msg": "Hello"}, ttl=3600) #Expires in 1 hour
 
 # retrieve memory
 data = memory.get_memory(namespace, user_id)
